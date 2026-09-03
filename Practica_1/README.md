@@ -45,3 +45,27 @@ Se implementaron tres versiones de la aplicación "Hola Mundo" mostrando los dat
    - **Estructura de UI:** Diseñada en `lib/main.dart` utilizando el árbol estándar `MaterialApp` > `Scaffold` > `Center` > `Column` > `Text`.
    - **Renderizado:** Dibuja la interfaz de forma nativa e independiente del sistema a través de su propio motor gráfico (Skia/Impeller).
 
+### Hallazgos del Proceso de Instalación y Configuración
+* **Gestión de licencias del SDK:** La instalación automática de herramientas de línea de comandos en versiones recientes puede generar advertencias en la verificación de licencias. La solución óptima requiere la instalación manual de `Android SDK Command-line Tools` estable desde el SDK Manager para asegurar la compatibilidad total con herramientas multiplataforma como Flutter.
+* **Políticas de ejecución del sistema:** Windows restringe por defecto la ejecución de scripts en PowerShell (`RemoteSigned`), lo que interfiere con herramientas basadas en Node/npm. Ajustar la directiva a nivel de usuario (`CurrentUser`) resuelve este conflicto sin comprometer la seguridad global del equipo.
+* **Integración del entorno móvil:** La configuración de un entorno nativo demanda una sincronización estricta entre versiones de JDK, Gradle, extensiones del IDE y variables de entorno del sistema (`ANDROID_HOME`, `PATH`), siendo fundamental validar la infraestructura antes de compilar código.
+
+---
+
+### Comparativa Técnica entre los Tres Enfoques
+
+| Criterio | Android Views (XML) | Jetpack Compose | Flutter |
+| :--- | :--- | :--- | :--- |
+| **Paradigma** | Imperativo tradicional | Declarativo nativo | Declarativo multiplataforma |
+| **Lenguaje de desarrollo** | XML (diseño) + Kotlin (lógica) | Kotlin al 100% | Dart al 100% |
+| **Curva de aprendizaje** | Media: requiere mapeo de vistas (`findViewById` / ViewBinding) | Media-baja para desarrolladores Kotlin modernos | Media: exige comprender la jerarquía de widgets y estados |
+| **Velocidad de iteración** | Lenta (reconstrucción y recarga de Activity) | Rápida con Live Edit y `@Preview` | Muy alta gracias a *Stateful Hot Reload* |
+| **Rendimiento e integración** | Nativo directo del framework de Android | Nativo optimizado con menos sobrecarga | Alto rendimiento vía motor gráfico propio (Skia/Impeller) |
+| **Portabilidad** | Exclusivo de Android | Multiplataforma incipiente (Compose Multiplatform) | Totalmente multiplataforma (Android, iOS, Web, Desktop) |
+
+---
+
+### Conclusiones
+* **Android Views (XML):** Sigue siendo el estándar histórico con amplia base de código y soporte maduro. No obstante, mantener archivos de vista desacoplados de la lógica de negocio añade complejidad, duplicidad de referencias y mayor mantenimiento en aplicaciones con interfaces dinámicas.
+* **Jetpack Compose:** Representa el estándar moderno y la dirección prioritaria de Android. Al eliminar completamente los layouts en XML y unificar el desarrollo en Kotlin, reduce drásticamente las líneas de código, previene errores de ciclo de vida y optimiza el manejo reactivo del estado de la interfaz.
+* **Flutter:** Es la opción más eficiente cuando se requiere desplegar en múltiples plataformas desde un único código base. Aunque el empaquetado inicial del binario APK es de mayor tamaño debido a su motor gráfico integrado, el dinamismo en tiempo de desarrollo y la consistencia visual entre dispositivos lo convierten en una alternativa altamente competitiva para el desarrollo móvil contemporáneo.
