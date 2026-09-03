@@ -16,13 +16,12 @@ A continuación se detallan las herramientas configuradas en el sistema operativ
 
 | Herramienta | Versión Instalada | Propósito en el Entorno de Desarrollo |
 | :--- | :--- | :--- |
-| **Java Development Kit (JDK)** | OpenJDK / JBR 17 o 21 | Compilación de código Kotlin/Java y ejecución del motor de compilación Gradle. |
-| **Android Studio** | Ladybug / Koala Feature Drop | Entorno de desarrollo integrado (IDE), administración de SDKs y emulación. |
-| **Android SDK Command-line Tools** | v17.0 (SDK Platforms 34/35) | Empaquetado de aplicaciones (`aapt2`), firma de binarios y aceptación de licencias. |
+| **Java Development Kit (JDK)** | OpenJDK 21 | Compilación de código Kotlin/Java y ejecución del motor de compilación Gradle. |
+| **Android Studio** | Ladybug 1.1306 | Entorno de desarrollo integrado (IDE), administración de SDKs y emulación. |
+| **Android SDK Command-line Tools** | v17.0 (SDK Platforms 35) | Empaquetado de aplicaciones (`aapt2`), firma de binarios y aceptación de licencias. |
 | **Git** | 2.x | Sistema de control de versiones distribuido para el seguimiento de la práctica. |
-| **Flutter SDK** | 3.47.2 (Channel stable) | Framework multiplataforma de UI reactiva impulsado por el lenguaje Dart. |
-| **Node.js & npm** | Node v24.20.0 / npm 10.x | Entorno de ejecución JavaScript y gestor de dependencias para tooling auxiliar. |
-| **Apache Maven (mvn)** | 3.9.x *(si aplica)* | Gestor de compilación y ciclo de vida de artefactos base. |
+| **Flutter SDK** | 3.47.2  | Framework multiplataforma de UI reactiva impulsado por el lenguaje Dart. |
+| **Node.js & npm** | Node v24.20.0  | Entorno de ejecución JavaScript y gestor de dependencias para tooling auxiliar. |
 | **Docker** | 27.x *(si aplica)* | Contenedores para aislamiento de servicios o entornos de prueba. |
 
 ---
