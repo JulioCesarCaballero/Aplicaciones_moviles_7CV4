@@ -1,0 +1,9 @@
+.gradle/
+build/
+app/build/
+*.iml
+.idea/
+local.properties
+.dart_tool/
+hola_mundo_flutter/build/
+node_modules/
